@@ -91,13 +91,17 @@ REST_FRAMEWORK = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sasta_bazar',
-        'USER': 'postgres',
-        'PASSWORD': 'sup3RuserPostgre2@',
-        'HOST':'localhost'
+        'NAME': 'd297gmg0d5bcn7',
+        'USER': 'jgihmtpsgdwxzi',
+        'PASSWORD': '25f4d56543794ec018fc9df32cde7cfd442b2a4b89b3fee0b931a993a1e2e215@',
+        'HOST':'ec2-44-197-128-108.compute-1.amazonaws.com',
+        'PORT': '5432',
     }
 }
 
+import dj_database_url
+db_from_env = dj_database_url.config(conn_max_age=600)
+DATABASES['default'].update(db_from_env)
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
