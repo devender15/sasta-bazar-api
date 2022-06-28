@@ -29,7 +29,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7pwzg7x#_bxc=(ipy9n0-6!)8t949glv5n+x5)-)_o79%+=!eo'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['sasta-bazar.herokuapp.com', '127.0.0.1']
 
