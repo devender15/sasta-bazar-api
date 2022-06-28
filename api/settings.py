@@ -42,20 +42,20 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-#     'cloudinary_storage',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'corsheaders',
     'rest_framework',
     'product',
     'UserAuthentication',
-    'paytmpayment',
-#     'cloudinary'
+    'paytmpayment'
 ]
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -147,13 +147,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Cloudinary stuff
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': "dlsrucbel",
-#     'API_KEY': "179675911725513",
-#     'API_SECRET': "dCZ7HFHnHuFqjOuvnlJfA1kzDZQ" 
-# }
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': "dlsrucbel",
+    'API_KEY': "179675911725513",
+    'API_SECRET': "dCZ7HFHnHuFqjOuvnlJfA1kzDZQ" 
+}
 
-# DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 
 REST_FRAMEWORK = {
