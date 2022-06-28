@@ -12,6 +12,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 from pathlib import Path
 import django_heroku
+# we  will use cloudinary storage for storing our media files
+import cloudinary
+import cloudinary_storage
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -38,12 +42,14 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'cloudinary_storage',
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
     'product',
     'UserAuthentication',
-    'paytmpayment'
+    'paytmpayment',
+    'cloudinary'
 ]
 
 MIDDLEWARE = [
@@ -144,6 +150,16 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Cloudinary stuff
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': "dlsrucbel",
+    'API_KEY': "179675911725513",
+    'API_SECRET': "dCZ7HFHnHuFqjOuvnlJfA1kzDZQ" 
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
 
 REST_FRAMEWORK = {
 
